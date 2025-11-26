@@ -21,9 +21,3 @@ export const useFetchSingleData = (id) => {
   });
 };
 
-// Hook to Update Product Data
-export const useUpdateSingleData = () => {
-  return useMutation({
-    mutationFn: ({ id, updateData }) => updateSingleProduct(id, updateData),
-  });
-};
