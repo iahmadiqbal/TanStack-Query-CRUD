@@ -18,17 +18,17 @@ export const fetchAllProducts = async () => {
   }
 };
 
-// Fetch to get Single product
-export const fetchSingleProduct = async (id) => {
+//  Fetch single product data
+export const fetchsingledata = async (id) => {
   try {
     const response = await fetch(`${BASE_URL}/products/${id}`);
-
-    if (response.ok) {
-      console.log("Failed to fetch single product");
+    if (!response.ok) {
+      console.log("Failed to fetch the single product data...");
     }
     const data = await response.json();
+    console.log("single product data", data);
     return data;
   } catch (error) {
-    console.log("something went wrong", error);
+    console.log("something went wrong...", error);
   }
 };

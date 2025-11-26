@@ -1,6 +1,6 @@
 import {
   fetchAllProducts,
-  fetchSingleProduct,
+  fetchsingledata,
 } from "@/servicesfile/ServiceProducts";
 import { useQuery } from "@tanstack/react-query";
 
@@ -12,10 +12,11 @@ export const useFetchAllProducts = () => {
   });
 };
 
-// Hook to fetch single Product
-export const useFetchSingleProduct = (id) => {
+// Hook to fetch single data
+
+export const useFetchSingleData = (id) => {
   return useQuery({
-    queryKey: ["fetchsingleproduct", id],
-    queryFn: () => fetchSingleProduct(id),
+    queryKey: ["fetchsingledata", id],
+    queryFn: () => fetchsingledata(id),
   });
 };

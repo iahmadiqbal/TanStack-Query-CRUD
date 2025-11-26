@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       {/* <GetAllProducts /> */}
-      <GetSingleProduct id={4} />
+      <GetSingleProduct id={3} />
     </>
   );
 }
