@@ -1,6 +1,7 @@
 import {
   fetchAllProducts,
   fetchsingledata,
+  updateSingleProduct,
 } from "@/servicesfile/ServiceProducts";
 import { useMutation, useQuery } from "@tanstack/react-query";
 
@@ -21,3 +22,10 @@ export const useFetchSingleData = (id) => {
   });
 };
 
+// Hook to update product data
+
+export const useUpdateSingleProduct = () => {
+  return useMutation({
+    mutationFn: ({ id, updateData }) => updateSingleProduct(id, updateData),
+  });
+};

@@ -32,3 +32,27 @@ export const fetchsingledata = async (id) => {
     console.log("something went wrong...", error);
   }
 };
+
+// update product data
+export const updateSingleProduct = async (id, updateData) => {
+  try {
+    const response = await fetch(`${BASE_URL}/products/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updateData),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to update the product");
+    }
+
+    const data = await response.json();
+    console.log("Updated product data:", data);
+    return data;
+  } catch (error) {
+    console.error("Something went wrong:", error);
+    throw error;
+  }
+};
