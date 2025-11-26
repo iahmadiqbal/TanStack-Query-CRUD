@@ -1,9 +1,11 @@
 import GetAllProducts from "./components/getallproducts/page";
+import GetSingleProduct from "./components/getsingleproduct/page";
 
 export default function Home() {
   return (
     <>
-      <GetAllProducts />
+      {/* <GetAllProducts /> */}
+      <GetSingleProduct id={4} />
     </>
   );
 }
