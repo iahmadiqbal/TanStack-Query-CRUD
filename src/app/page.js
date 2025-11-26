@@ -1,3 +1,4 @@
+import CreateProduct from "./components/createproduct/page";
 import DeleteProduct from "./components/deleteproduct/page";
 import GetAllProducts from "./components/getallproducts/page";
 import GetSingleProduct from "./components/getsingleproduct/page";
@@ -9,7 +10,8 @@ export default function Home() {
       {/* <GetAllProducts /> */}
       {/* <GetSingleProduct id={3} /> */}
       {/* <UpdateProduct /> */}
-      <DeleteProduct id={2} />
+      {/* <DeleteProduct id={2} /> */}
+      <CreateProduct id={3} />
     </>
   );
 }

@@ -33,6 +33,30 @@ export const fetchsingledata = async (id) => {
   }
 };
 
+// create Product Data
+export const CreateProductData = async (productData) => {
+  try {
+    const response = await fetch(`${BASE_URL}/products`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(productData),
+    });
+
+    if (!response.ok) {
+      console.log("Failed to create product");
+    }
+
+    const data = await response.json();
+    console.log("Product Created Successfully", data);
+    return data;
+  } catch (error) {
+    console.log("Something went wrong", error);
+    throw error;
+  }
+};
+
 // update product data
 export const UpdataProductData = async (id, updateData) => {
   try {
