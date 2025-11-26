@@ -53,3 +53,20 @@ export const UpdataProductData = async (id, updateData) => {
     console.log("something went wrong", error);
   }
 };
+
+//Delete Product by ID
+export const DeleteProductData = async (id) => {
+  try {
+    const response = await fetch(`${BASE_URL}/products/${id}`, {
+      method: "DELETE",
+    });
+    if (!response.ok) {
+      console.log("Failed to delete the product");
+    }
+    const data = await response.json();
+    console.log("Product Deleted Successfully", data);
+    return data;
+  } catch (error) {
+    console.log("something went wrong", error);
+  }
+};

@@ -1,4 +1,6 @@
+"use client";
 import {
+  DeleteProductData,
   fetchAllProducts,
   fetchsingledata,
   UpdataProductData,
@@ -14,7 +16,6 @@ export const useFetchAllProducts = () => {
 };
 
 // Hook to fetch single data
-
 export const useFetchSingleData = (id) => {
   return useQuery({
     queryKey: ["fetchsingledata", id],
@@ -23,9 +24,15 @@ export const useFetchSingleData = (id) => {
 };
 
 //  Hook to update the produc
-
 export const useUpdataProductData = () => {
   return useMutation({
     mutationFn: ({ id, updateData }) => UpdataProductData(id, updateData),
+  });
+};
+
+// Hook to Delete Product Data
+export const useDeleteProductData = (id) => {
+  return useMutation({
+    mutationFn: (id) => DeleteProductData(id),
   });
 };
