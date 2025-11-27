@@ -1,26 +1,23 @@
 "use client";
 
-import { useCreateProductData } from "@/hooks/useProducts";
+import { useCreateNewProductData } from "@/hooks/useProducts";
 
 const CreateProduct = () => {
-  const { mutate, isLoading, isError, isSuccess } = useCreateProductData();
-
+  const { mutate, isLoading, isError } = useCreateNewProductData();
+  if (isLoading) return <h1>Data is Loading...</h1>;
+  if (isError) return <h1>Failed to fetch The Error</h1>;
   const handleCreateProduct = () => {
     mutate({
-      title: "I am new Title",
-      description: "I am the new Description",
-      price: "$45",
+      title: "I am new Product title",
+      description: "I am new Product Data Description",
+      price: "$28",
     });
   };
 
   return (
     <div>
-      <h1>Create Product</h1>
-      <button onClick={handleCreateProduct}>Create Product</button>
-
-      {isLoading && <p>Creating product...</p>}
-      {isError && <p>Failed to create the product.</p>}
-      {isSuccess && <p>Product created successfully!</p>}
+      <h1>Create Product Data...</h1>
+      <button onClick={handleCreateProduct}>CreateProductData</button>
     </div>
   );
 };

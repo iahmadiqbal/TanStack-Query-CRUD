@@ -11,7 +11,7 @@ export default function Home() {
       {/* <GetSingleProduct id={3} /> */}
       {/* <UpdateProduct /> */}
       {/* <DeleteProduct id={2} /> */}
-      <CreateProduct id={3} />
+      <CreateProduct />
     </>
   );
 }

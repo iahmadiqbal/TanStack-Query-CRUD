@@ -1,6 +1,7 @@
 "use client";
+import UpdateProduct from "@/app/components/updateproduct/page";
 import {
-  CreateProductData,
+  CreateNewProductData,
   DeleteProductData,
   fetchAllProducts,
   fetchsingledata,
@@ -24,13 +25,14 @@ export const useFetchSingleData = (id) => {
   });
 };
 
-// Hook to create product
-export const useCreateProductData = () => {
+// Hook to Create New Product
+export const useCreateNewProductData = () => {
   return useMutation({
-    mutationFn: (productData) => CreateProductData(productData),
+    mutationFn: (createData) => CreateNewProductData(createData),
   });
 };
-//  Hook to update the produc
+
+//  Hook to Update the Product Data
 export const useUpdataProductData = () => {
   return useMutation({
     mutationFn: ({ id, updateData }) => UpdataProductData(id, updateData),
