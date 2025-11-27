@@ -1,8 +1,8 @@
 "use client";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-const queryclient = new QueryClient();
 export default function RootLayout({ children }) {
+  const queryclient = new QueryClient();
   return (
     <html lang="en">
       <QueryClientProvider client={queryclient}>

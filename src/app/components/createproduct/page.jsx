@@ -3,9 +3,11 @@
 import { useCreateNewProductData } from "@/hooks/useProducts";
 
 const CreateProduct = () => {
-  const { mutate, isLoading, isError } = useCreateNewProductData();
+  const { mutate, isLoading, isError, isSuccess } = useCreateNewProductData();
   if (isLoading) return <h1>Data is Loading...</h1>;
   if (isError) return <h1>Failed to fetch The Error</h1>;
+  if (isSuccess) return <h1>Product created successfully</h1>;
+
   const handleCreateProduct = () => {
     mutate({
       title: "I am new Product title",
